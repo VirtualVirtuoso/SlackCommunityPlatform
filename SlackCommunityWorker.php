@@ -18,12 +18,12 @@ mb_internal_encoding("UTF-8");
 | User Defined Variables
 |--------------------------------------------------------------------------
 */
-$typeformApiKey = 				'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-$typeformFormId = 				'xxxxxx';
-$typeformEmailField = 			'email_xxxxxxxx';
-$typeformNameField = 			'textfield_xxxxxxxx';
+$typeformApiKey =				'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+$typeformFormId =				'xxxxxx';
+$typeformEmailField =			'email_xxxxxxxx';
+$typeformNameField =			'textfield_xxxxxxxx';
 
-$slackHostName = 				'nameofyourcommunity';
+$slackHostName =				'nameofyourcommunity';
 $slackAutoJoinChannels =		'xxxxxxxxx,xxxxxxxxx,xxxxxxxxx,xxxxxxxxx,xxxxxxxxx,xxxxxxxxx';
 $slackAuthToken =				'xoxp-xxxxxxxxxxx-xxxxxxxxxxx-xxxxxxxxxxx-xxxxxxxxxx';
 
@@ -77,7 +77,7 @@ echo date('c') . ' - ' . $i . ' - ' . "\"" . $user['name'] . "\" <" . $user['ema
 
 $fields = array(
 	'email' 			=> urlencode($user['email']),
-	'channels' 		    => urlencode($slackAutoJoinChannels),
+	'channels'			=> urlencode($slackAutoJoinChannels),
 	'first_name' 		=> urlencode($user['name']),
 	'token' 			=> $slackAuthToken,
 	'set_active' 		=> urlencode('true'),
