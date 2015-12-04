@@ -18,14 +18,14 @@ mb_internal_encoding("UTF-8");
 | User Defined Variables
 |--------------------------------------------------------------------------
 */
-$typeformApiKey =				'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-$typeformFormId =				'xxxxxx';
+$typeformApiKey =			'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+$typeformFormId =			'xxxxxx';
 $typeformEmailField =			'email_xxxxxxxx';
 $typeformNameField =			'textfield_xxxxxxxx';
 
-$slackHostName =				'nameofyourcommunity';
+$slackHostName =			'nameofyourcommunity';
 $slackAutoJoinChannels =		'xxxxxxxxx,xxxxxxxxx,xxxxxxxxx,xxxxxxxxx,xxxxxxxxx,xxxxxxxxx';
-$slackAuthToken =				'xoxp-xxxxxxxxxxx-xxxxxxxxxxx-xxxxxxxxxxx-xxxxxxxxxx';
+$slackAuthToken =			'xoxp-xxxxxxxxxxx-xxxxxxxxxxx-xxxxxxxxxxx-xxxxxxxxxx';
 
 $previouslyInvitedEmailsFile = __DIR__ . '/previouslyInvited.json';
 
@@ -76,10 +76,10 @@ foreach($usersToInvite as $user) {
 echo date('c') . ' - ' . $i . ' - ' . "\"" . $user['name'] . "\" <" . $user['email'] . "> - Inviting to " . $slackHostName . " Slack\n";
 
 $fields = array(
-	'email' 			=> urlencode($user['email']),
-	'channels'			=> urlencode($slackAutoJoinChannels),
+	'email' 		=> urlencode($user['email']),
+	'channels'		=> urlencode($slackAutoJoinChannels),
 	'first_name' 		=> urlencode($user['name']),
-	'token' 			=> $slackAuthToken,
+	'token' 		=> $slackAuthToken,
 	'set_active' 		=> urlencode('true'),
 	'_attempts' 		=> '1'
 );
