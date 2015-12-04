@@ -19,14 +19,14 @@ mb_internal_encoding("UTF-8");
 |--------------------------------------------------------------------------
 */
 
-$typeformApiKey =			'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-$typeformFormId =			'xxxxxx';
-$typeformEmailField =			'email_xxxxxxxx';
-$typeformNameField =			'textfield_xxxxxxxx';
+$typeformApiKey =		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+$typeformFormId =		'xxxxxx';
+$typeformEmailField =		'email_xxxxxxxx';
+$typeformNameField =		'textfield_xxxxxxxx';
 
-$slackHostName =			'nameofyourcommunity';
-$slackAutoJoinChannels =		'xxxxxxxxx,xxxxxxxxx,xxxxxxxxx,xxxxxxxxx,xxxxxxxxx,xxxxxxxxx';
-$slackAuthToken =			'xoxp-xxxxxxxxxxx-xxxxxxxxxxx-xxxxxxxxxxx-xxxxxxxxxx';
+$slackHostName =		'nameofyourcommunity';
+$slackAutoJoinChannels =	'xxxxxxxxx,xxxxxxxxx,xxxxxxxxx,xxxxxxxxx,xxxxxxxxx,xxxxxxxxx';
+$slackAuthToken =		'xoxp-xxxxxxxxxxx-xxxxxxxxxxx-xxxxxxxxxxx-xxxxxxxxxx';
 
 $previouslyInvitedEmailsFile = __DIR__ . '/previouslyInvited.json';
 
@@ -60,7 +60,7 @@ foreach($typeformData['responses'] as $response) {
 
 	$user['name'] = $response['answers'][$typeformNameField];
 	if(!in_array($user['email'], $previouslyInvitedEmails)) {
-			array_push($usersToInvite,$user);
+		array_push($usersToInvite,$user);
 	}
 }
 
@@ -78,12 +78,12 @@ foreach($usersToInvite as $user) {
 	echo date('c') . ' - ' . $i . ' - ' . "\"" . $user['name'] . "\" <" . $user['email'] . "> - Inviting to " . $slackHostName . " Slack\n";
 
 	$fields = array(
-		'email' 		=> urlencode($user['email']),
-		'channels'		=> urlencode($slackAutoJoinChannels),
-		'first_name' 		=> urlencode($user['name']),
-		'token' 		=> $slackAuthToken,
-		'set_active' 		=> urlencode('true'),
-		'_attempts' 		=> '1'
+		'email' 	=> urlencode($user['email']),
+		'channels'	=> urlencode($slackAutoJoinChannels),
+		'first_name' 	=> urlencode($user['name']),
+		'token' 	=> $slackAuthToken,
+		'set_active' 	=> urlencode('true'),
+		'_attempts' 	=> '1'
 	);
 
 	$fields_string = '';
